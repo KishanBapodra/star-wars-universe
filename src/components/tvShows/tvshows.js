@@ -18,15 +18,19 @@ const Shows = () => {
 
     }, []);
 
-    console.log(appState)
     if(!isLoading) {
         return(
-            appState.results.map((show) => {
-                console.log(show);
-                return(
-                   <Card title={show.original_name} description={show.overview} image={show.poster_path}/>
-                )
-            })
+            <div className="flex flex-wrap">
+                <div className="mt-28 w-full ml-12 flex flex-row ">
+                    {appState.results.map((show) => {
+                        return(
+                            <div className="pl-10">
+                                <Card title={show.original_name} description={show.overview} image={show.poster_path}/>
+                            </div>
+                        )
+                    })}
+                </div>
+            </div>
         )
     } else
     return(
