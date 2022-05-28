@@ -20,14 +20,18 @@ const Movies = () => {
 
     if(!isLoading) {
         return(
-            appState.results.map((movie) => {
-                console.log(movie);
-                return(
-                <div className="m-8 w-screen">
-                    <Card title={movie.original_title} description={movie.overview} image={movie.poster_path} />
-                </div>
-                )
-            })
+            <div className="flex flex-wrap">
+            <div className="mt-28 w-full ml-12 flex flex-row ">   
+                {appState.results.map((movie) => {
+                    console.log(movie);
+                    return(
+                        <div className="pl-10">
+                            <Card className="w-96" title={movie.original_title} description={movie.overview} image={movie.poster_path} />
+                        </div>
+                        )
+                })}
+            </div>
+            </div>
         )
     } else
     return(

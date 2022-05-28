@@ -1,5 +1,4 @@
 import React from "react";
-import backgrnd from "../assets/star-wars-2.jpg"
 
 const MainPage = () => {
   return (
