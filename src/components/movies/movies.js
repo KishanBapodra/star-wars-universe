@@ -34,7 +34,7 @@ const Movies = () => {
     } else
     return(
         <>
-            <h1>Loading...</h1>
+            <h1 className="flex justify-center items-center h-screen text-6xl font-extrabold">Loading...</h1>
         </>
     );
     
