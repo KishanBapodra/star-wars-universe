@@ -10,6 +10,9 @@ const Navbar = () => {
                 </div>
                 <ul className="flex">
                     <li className="px-6 hover:text-white/100 hover:font-bold">
+                        <Link to="watchlist">Watchlist</Link>       
+                    </li>
+                    <li className="px-6 hover:text-white/100 hover:font-bold">
                         <Link to="games">Games</Link>       
                     </li>
                     <li className="px-6 hover:text-white/100 hover:font-bold">

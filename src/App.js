@@ -9,6 +9,7 @@ import MainPage from "./components/main/main";
 import Movies from "./components/movies/movies";
 import Shows from "./components/tvShows/tvshows";
 import Games from "./components/games/Games";
+import Watchlist from "./components/watchlist/Watchlist";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Navbar className="z-10"/>
         <Routes>
           <Route path="/" element={<MainPage />} />
+          <Route path="/watchlist" element={<Watchlist />} />
           <Route path="/movies" element={<Movies />} />
           <Route path="/shows" element={<Shows />} />
           <Route path="/games" element={<Games />} />
