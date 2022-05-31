@@ -24,7 +24,7 @@ const Movies = () => {
                     {appState.results.map((movie) => {
                         return(
                             <div className="pl-10">
-                                <Card className="w-96" title={movie.original_title} description={movie.overview} image={movie.poster_path} />
+                                <Card className="w-96" data={movie} title={movie.original_title} description={movie.overview} image={movie.poster_path} />
                             </div>
                             )
                     })}

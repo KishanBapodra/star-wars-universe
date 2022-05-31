@@ -25,7 +25,7 @@ const Shows = () => {
                     {appState.results.map((show) => {
                         return(
                             <div className="pl-10">
-                                <Card title={show.original_name} description={show.overview} image={show.poster_path}/>
+                                <Card data={show} title={show.original_name} description={show.overview} image={show.poster_path}/>
                             </div>
                         )
                     })}
