@@ -20,15 +20,17 @@ const Shows = () => {
 
     if(!isLoading) {
         return(
-            <div className="flex flex-wrap">
-                <div className="mt-28 w-full ml-12 flex flex-row ">
-                    {appState.results.map((show) => {
-                        return(
-                            <div className="pl-10">
-                                <Card data={show} title={show.original_name} description={show.overview} image={show.poster_path}/>
-                            </div>
-                        )
-                    })}
+            <div className="bg-star-wars-4">
+                <div className=" mt-[4.7rem]">
+                    <div className="pb-10 grid pt-10 w-full grid-cols-8 ">
+                        {appState.results.map((show) => {
+                            return(
+                                <div className="pl-10 mt-5">
+                                    <Card data={show} title={show.original_name} description={show.overview} image={show.poster_path}/>
+                                </div>
+                            )
+                        })}
+                    </div>
                 </div>
             </div>
         )

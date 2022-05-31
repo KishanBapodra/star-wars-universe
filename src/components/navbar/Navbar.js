@@ -14,7 +14,7 @@ const Navbar = () => {
 
     return(
         <nav className="absolute bg-gray-900 bg-opacity-30 w-screen top-0 z-50 flex flex-wrap items-center justify-between px-2 py-5 text-white/75">
-            <div className="container font-galaxy text-xl  mx-auto flex flex-wrap items-center justify-between">
+            <div className="container font-galaxy text-xl mx-auto flex flex-wrap items-center justify-between">
                 <div>
                     <Link className="text-3xl font-galaxy italic hover:text-white/100 hover:font-semibold" to="/">STAR WARS</Link>
                 </div>
