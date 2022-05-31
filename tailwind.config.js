@@ -6,7 +6,10 @@ module.exports = {
         galaxy: ["SF Distant Galaxy", "regular"],
       },
       backgroundImage: {
-        "star-wars": "url('/src/components/assets/star-wars-2.jpg')",
+        "star-wars-1": "url('/src/components/assets/star-wars-1.jpg')",
+        "star-wars-2": "url('/src/components/assets/star-wars-2.jpg')",
+        "star-wars-3": "url('/src/components/assets/star-wars-3.jpg')",
+        "star-wars-4": "url('/src/components/assets/star-wars-4.jpg')",
       },
     },
   },
