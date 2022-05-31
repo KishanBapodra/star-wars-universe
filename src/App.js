@@ -1,5 +1,4 @@
 import React from "react";
-// import backgrnd from "./components/assets/star-wars-2.jpg"
 import Navbar from "./components/navbar/Navbar";
 import {
   Route, 
@@ -9,6 +8,8 @@ import Movies from "./components/movies/movies";
 import Shows from "./components/tvShows/tvshows";
 import Games from "./components/games/Games";
 import Watchlist from "./components/watchlist/Watchlist";
+import Movie from "./components/movies/movie";
+import Show from "./components/tvShows/show";
 
 function App() {
   return (
@@ -18,7 +19,9 @@ function App() {
         <Route path="/" element={<MainPage />} />
         <Route path="/watchlist" element={<Watchlist />} />
         <Route path="/movies" element={<Movies />} />
+        <Route path="/movies/:id" element={<Movie />} />
         <Route path="/shows" element={<Shows />} />
+        <Route path="/shows/:id" element={<Show />} />
         <Route path="/games" element={<Games />} />
       </Routes>
     </>
