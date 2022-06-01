@@ -7,7 +7,7 @@ const Show = (props) => {
     const data = location.state?.data;
 
     return(
-        <div className="mt-24 ml-12">
+        <div className="ml-12">
             <h1>
                 {data ? data.original_name : "Loading..."}
             </h1>

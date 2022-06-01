@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Card = ({data ,title, description, image}) => {
 
   return(
-        <div className="flex flex-column w-[10rem] h-[24rem] shadow-md hover:shadow-2xl text-ellipsis overflow-hidden">
+        <div className="flex flex-column w-[10rem] h-[24rem] shadow-md hover:shadow-[0_45px_85px_-18px_rgba(0,0,0,1)] text-ellipsis overflow-hidden">
             <div className="rounded-lg shadow-lg max-w-xs text-ellipsis bg-white bg-opacity-40 ">
               {/* <Link to={title.split(" ").join("-").split(":").join("").toLowerCase()}> */}
               <Link to={title.replace(/\//g,'-').replace(/\s+/g,'-').replace(/:+/g,'').toLowerCase()} state={{data: data}}>
