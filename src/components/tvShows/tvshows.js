@@ -20,9 +20,9 @@ const Shows = () => {
 
     if(!isLoading) {
         return(
-            <div className="bg-star-wars-4">
-                <div className=" mt-[4.7rem]">
-                    <div className="pb-10 grid pt-10 w-full grid-cols-8 ">
+            <div className="bg-star-wars-5 bg-cover">
+                <div className="">
+                    <div className="mt-[4.7rem] pb-10 grid pt-10 w-full 2xl:grid-cols-8 xl:grid-cols-7 lg:grid-cols-5 md:grid-cols-3 sm:grid-cols-2 ">
                         {appState.results.map((show) => {
                             return(
                                 <div className="pl-10 mt-5">
