@@ -6,7 +6,6 @@ import {
 import MainPage from "./components/main/main";
 import Movies from "./components/movies/movies";
 import Shows from "./components/tvShows/tvshows";
-import Games from "./components/games/Games";
 import Watchlist from "./components/watchlist/Watchlist";
 import Movie from "./components/movies/movie";
 import Show from "./components/tvShows/show";
@@ -38,7 +37,6 @@ function App() {
         <Route path="/movies/:id" element={<Movie />} />
         <Route path="/shows" element={<Shows />} />
         <Route path="/shows/:id" element={<Show />} />
-        <Route path="/games" element={<Games />} />
       </Routes>
     </>
   );
