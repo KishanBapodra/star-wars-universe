@@ -1,5 +1,4 @@
 import React from "react";
-import { useState, useEffect } from "react";
 import {
   Route, 
   Routes} from 'react-router-dom';
@@ -10,28 +9,14 @@ import Watchlist from "./components/watchlist/Watchlist";
 import Movie from "./components/movies/movie";
 import Show from "./components/tvShows/show";
 import Nav from "./components/navbar/nav";
-import { useLocation } from "react-router-dom";
 
 function App() {
-  
-  const [isMain, setMain] = useState(false);
-  const location = useLocation();
-  
-  useEffect(() => {
-    if (location.pathname === "/") {
-      setMain(true);
-    } else {
-      setMain(false);
-    }
-  }, [location]);
 
   return (
     <>
+      <Nav />
       <Routes>
         <Route path="/" element={<MainPage />} />
-      </Routes>
-      {isMain? null : <Nav />}
-      <Routes>
         <Route path="/watchlist" element={<Watchlist />} />
         <Route path="/movies" element={<Movies />} />
         <Route path="/movies/:id" element={<Movie />} />

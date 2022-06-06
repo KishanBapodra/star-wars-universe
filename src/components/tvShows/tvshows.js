@@ -22,7 +22,7 @@ const Shows = () => {
         return(
             <div className="bg-star-wars-5 bg-cover">
                 <div className="">
-                    <div className="grid pt-10 pb-10 w-full 3xl:grid-cols-8 2xl:grid-cols-7 xl:grid-cols-6 lg:grid-cols-5 md:grid-cols-4 sm:grid-cols-3">
+                    <div className="grid pt-20 pb-10 w-full 3xl:grid-cols-8 2xl:grid-cols-7 xl:grid-cols-6 lg:grid-cols-5 md:grid-cols-4 sm:grid-cols-3">
                         {appState.results.map((show) => {
                             return(
                                 <div className="pl-10 mt-5">
