@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -7,11 +7,46 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const Nav = () => {
     
     const [searchClicked, setSearchClicked] = useState(false);
+    const [user, setUser] = useState(false);
 
     function handleSearch() {
         setSearchClicked(!searchClicked);
     }
 
+    useEffect(() => {
+      getUser();
+    }, []);
+
+    function getUser() {
+        fetch('http://localhost:8000')
+          .then(response => {
+            return response.text();
+          })
+          .then(data => {
+            setUser(data);
+          });
+      }
+
+    function createUser() {
+        let name = prompt('Enter user name');
+        let password = prompt('Enter password');
+        fetch('http://localhost:8000/users', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({name, password}),
+        })
+          .then(response => {
+            return response.text();
+          })
+          .then(data => {
+            alert(data);
+            getUser();
+          });
+      }
+
+    console.log(user);
 
     return(
         <nav className="absolute w-full px-2 sm:px-4 py-7 rounded bg-gray-900 bg-opacity-0  ">
@@ -37,7 +72,10 @@ const Nav = () => {
                             <Link to="/movies" className="text-lg py-2 pr-4 pl-3 text-gray-700 hover:bg-gray-50 md:hover:bg-transparent md:border-0  md:p-0 dark:text-white/80 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Movies</Link>
                         </li>
                         <li>
-                        {!searchClicked? <button className=" text-gray-700 hover:bg-gray-50 md:hover:bg-transparent md:border-0  md:p-0 dark:text-white/80 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent" onClick={handleSearch}>
+                            <button onClick={createUser} className="text-lg pr-4 pl-3 text-gray-700 hover:bg-gray-50 md:hover:bg-transparent md:border-0  md:pl-0 dark:text-white/80 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Login</button>
+                        </li>
+                        <li>
+                        {!searchClicked? <button className=" text-gray-700 hover:bg-gray-50 md:hover:bg-transparent md:border-0  md:p-0 md:pl-1 dark:text-white/80 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent" onClick={handleSearch}>
                                             <FontAwesomeIcon className="py-1 text-sm" icon={faSearch} />
                                             </button> :
                                             <input 
