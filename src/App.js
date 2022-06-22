@@ -2,6 +2,7 @@ import React from "react";
 import {
   Route, 
   Routes} from 'react-router-dom';
+import { WatchlistProvider } from "./components/context/WatchlistState";
 import MainPage from "./components/main/main";
 import Movies from "./components/movies/movies";
 import Shows from "./components/tvShows/tvshows";
@@ -13,7 +14,7 @@ import Nav from "./components/navbar/nav";
 function App() {
 
   return (
-    <>
+    <WatchlistProvider>
       <Nav />
       <Routes>
         <Route path="/" element={<MainPage />} />
@@ -23,7 +24,7 @@ function App() {
         <Route path="/shows" element={<Shows />} />
         <Route path="/shows/:id" element={<Show />} />
       </Routes>
-    </>
+    </WatchlistProvider>
   );
 }
 
