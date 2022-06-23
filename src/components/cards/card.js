@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { WatchlistContext } from "../context/WatchlistState";
 import { useLocation } from "react-router-dom";
+import { RiPlayListAddFill } from "react-icons/ri";
 
 const Card = ({data ,title, description, image}) => {
 
@@ -25,7 +26,9 @@ const Card = ({data ,title, description, image}) => {
               </Link>
             </div>
             {!isWatchlist ? 
-              <button disabled={btnDisable} onClick={() => addToWatchlist(data)} className="hidden text-[#803B48]  hover:text-[#803B48] font-semibold hover:font-extrabold rounded-lg group-hover:block absolute hover:cursor-pointer top-6 w-full h-12 align-middle text-center left-1/2 bg-gray-400 bg-opacity-90 -translate-x-1/2 -translate-y-1/2 ">Add to watchlist</button>
+              <button disabled={btnDisable} onClick={() => addToWatchlist(data)} className="hidden text-neutral-400 hover:text-white pl-3 font-semibold hover:font-extrabold rounded-lg group-hover:block absolute hover:cursor-pointer w-12 h-12 bg-slate-900 bg-opacity-90 ">
+                <RiPlayListAddFill className="font-extrabold text-2xl" />
+              </button>
               : null}  
         </div>
   );
