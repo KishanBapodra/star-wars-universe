@@ -6,13 +6,13 @@ import Card from "../cards/card";
 const Shows = () => {
     
     const [isLoading, setLoading] = useState(true);
-    const [appState, SetAppState] = useState(null);
+    const [shows, SetShows] = useState(null);
     
     useEffect(() => {
         const apiurl = "https://api.themoviedb.org/3/search/tv?api_key="+process.env.REACT_APP_API_KEY+"&language=en-US&page=1&query=Star%20Wars&include_adult=false"
         axios.get(apiurl).then((showsData) => {
             const starWarsShows = showsData.data;
-            SetAppState(starWarsShows);
+            SetShows(starWarsShows);
             setLoading(false);
         });
 
@@ -22,7 +22,7 @@ const Shows = () => {
         return(
             <div className="bg-star-wars-5 bg-cover">
                 <div className="flex flex-wrap justify-around sm:m-0 sm:grid pt-[7.2rem] pb-10 w-full 3xl:grid-cols-8 2xl:grid-cols-7 xl:grid-cols-6 lg:grid-cols-5 md:grid-cols-4 sm:grid-cols-3">
-                    {appState.results.map((show, index) => {
+                    {shows.results.map((show, index) => {
                         return(
                             <div key={index} className="sm:ml-0 sm:pl-10 mt-5">
                                 <Card data={show} title={show.original_name} description={show.overview} image={show.poster_path}/>
