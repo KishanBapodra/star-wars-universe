@@ -21,7 +21,7 @@ const Card = ({data ,title, description, image}) => {
                 </div>
               </Link>
             </div>
-            <button disabled={btnDisable} onClick={() => addToWatchlist(data)} className="hidden rounded-lg group-hover:block absolute hover:cursor-pointer top- w-full h-10 left-1/2 bg-gray-200 bg-opacity-70 -translate-x-1/2 -translate-y-1/2 ">Add to watchlist</button>  
+            <button disabled={btnDisable} onClick={() => addToWatchlist(data)} className="hidden rounded-lg group-hover:block absolute hover:cursor-pointer top-5 w-full h-20 align-middle text-center left-1/2 bg-gray-200 bg-opacity-70 -translate-x-1/2 -translate-y-1/2 ">Add to watchlist</button>  
         </div>
   );
 }
