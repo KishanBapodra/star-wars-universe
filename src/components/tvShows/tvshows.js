@@ -21,10 +21,10 @@ const Shows = () => {
     if(!isLoading) {
         return(
             <div className="bg-star-wars-5 bg-cover">
-                <div className="flex flex-wrap justify-around sm:m-0 sm:grid pt-[7.2rem] pb-10 w-full 3xl:grid-cols-8 2xl:grid-cols-7 xl:grid-cols-6 lg:grid-cols-5 md:grid-cols-4 sm:grid-cols-3">
+                <div className="flex flex-wrap justify-around sm:px-10 sm:m-0 sm:grid pt-[7.2rem] pb-10 w-full 3xl:grid-cols-8 2xl:grid-cols-7 xl:grid-cols-6 lg:grid-cols-5 md:grid-cols-4 sm:grid-cols-3">
                     {shows.results.map((show, index) => {
                         return(
-                            <div key={index} className="sm:ml-0 sm:pl-10 mt-5">
+                            <div key={index} className="sm:ml-0 sm:px-5 mt-5">
                                 <Card data={show} title={show.original_name} description={show.overview} image={show.poster_path}/>
                             </div>
                         )
