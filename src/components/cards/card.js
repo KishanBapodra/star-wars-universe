@@ -4,6 +4,8 @@ import { useContext } from "react";
 import { WatchlistContext } from "../context/WatchlistState";
 import { useLocation } from "react-router-dom";
 import { RiPlayListAddFill } from "react-icons/ri";
+import { CgPlayListRemove } from "react-icons/cg";
+import { CgPlayListAdd } from "react-icons/cg";
 
 const Card = ({data ,title, description, image}) => {
 
@@ -25,11 +27,13 @@ const Card = ({data ,title, description, image}) => {
                 </div>
               </Link>
             </div>
-            {!isWatchlist ? 
-              <button disabled={btnDisable} onClick={() => addToWatchlist(data)} className="hidden text-neutral-400 hover:text-white pl-3 font-semibold hover:font-extrabold rounded-lg group-hover:block absolute hover:cursor-pointer w-12 h-12 bg-slate-900 bg-opacity-90 ">
-                <RiPlayListAddFill className="font-extrabold text-2xl" />
-              </button>
-              : null}  
+            <button disabled={btnDisable} onClick={() => addToWatchlist(data)} className={`hidden text-neutral-400 hover:text-white p-2 font-semibold hover:font-extrabold rounded-lg ${!btnDisable ? "group-hover:block" : null} absolute hover:cursor-pointer w-14 h-14 bg-slate-900 `}>
+              <CgPlayListAdd className="font-extrabold text-[2.85rem]" />
+            </button>
+            <button disabled={!btnDisable} onClick={() => addToWatchlist(data)} className={`hidden right-0 text-neutral-400 hover:text-white p-[0.4rem] font-semibold hover:font-extrabold rounded-lg ${btnDisable ? "group-hover:block" : null} absolute hover:cursor-pointer w-14 h-14 bg-slate-900 `}>
+              <CgPlayListRemove className="font-extrabold text-5xl" />
+            </button>
+            
         </div>
   );
 }
