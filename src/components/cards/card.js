@@ -2,16 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { WatchlistContext } from "../context/WatchlistState";
-import { useLocation } from "react-router-dom";
-import { RiPlayListAddFill } from "react-icons/ri";
 import { CgPlayListRemove } from "react-icons/cg";
 import { CgPlayListAdd } from "react-icons/cg";
 
 const Card = ({data ,title, description, image}) => {
 
   const { addToWatchlist, watchlist } = useContext(WatchlistContext);
-  const location = useLocation()
-  const isWatchlist = location.pathname === '/watchlist' ? true : false;
 
   let storedMovie = watchlist.find(i => i.title === title)
   let storedShow = watchlist.find(i => i.original_name === title)
