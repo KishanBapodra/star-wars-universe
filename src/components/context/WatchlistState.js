@@ -26,13 +26,18 @@ export const WatchlistProvider = props => {
         dispatch({type: "ADD_TO_WATCHED", payload: movie})
     }
 
+    const removeFromWatchlist = movie => {
+        dispatch({type: "REMOVE_FROM_WATCHLIST", payload: movie})
+    }
+
     return (
         <WatchlistContext.Provider 
             value={{
                 watchlist: state.watchlist, 
                 watched: state.watched, 
                 addToWatchlist, 
-                addToWatched
+                addToWatched,
+                removeFromWatchlist
             }}
         >
             {props.children}

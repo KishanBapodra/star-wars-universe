@@ -10,6 +10,11 @@ const appReducer = (state, action) => {
                 ...state,
                 watched: [action.payload, ...state.watched]
             };
+        case "REMOVE_FROM_WATCHLIST":
+            return {
+                ...state,
+                watchlist: state.watchlist.filter((movie) => movie !== action.payload)
+            };
         default:
             return state; 
     }
