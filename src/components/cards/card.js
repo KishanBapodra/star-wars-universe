@@ -4,6 +4,7 @@ import { useContext } from "react";
 import { WatchlistContext } from "../context/WatchlistState";
 import { CgPlayListRemove } from "react-icons/cg";
 import { CgPlayListAdd } from "react-icons/cg";
+import { useLocation } from "react-router-dom";
 
 const Card = ({data ,title, description, image}) => {
 
@@ -12,11 +13,20 @@ const Card = ({data ,title, description, image}) => {
   let storedMovie = watchlist.find(i => i.title === title)
   let storedShow = watchlist.find(i => i.original_name === title)
   const btnDisable = storedMovie || storedShow ? true : false;
+  
+  const location = useLocation();
+  const addToUrl = title.replace(/\//g,'-').replace(/\s+/g,'-').replace(/:+/g,'').toLowerCase();
 
   return(
         <div className="relative group flex flex-column w-[10rem] h-[24rem] shadow-md hover:shadow-[0_45px_85px_-18px_rgba(0,0,0,1)] text-ellipsis overflow-hidden">
             <div className="rounded-lg shadow-lg max-w-xs text-ellipsis bg-white bg-opacity-50">
-              <Link to={title.replace(/\//g,'-').replace(/\s+/g,'-').replace(/:+/g,'').toLowerCase()} state={{data: data}}>
+              
+              <Link 
+                to={!storedMovie && !storedShow ? addToUrl : (storedMovie ? "/movies/" + addToUrl : "/shows/" + addToUrl)} 
+                state={{data: data}}
+              >
+                
+              
                 <img className="rounded-t-lg align-middle" src={"https://image.tmdb.org/t/p/w200/"+image} alt=""/>
                 <div className="p-6">
                   <h5 className="flex justify-center items-center w-full h-full text-gray-900 text-lg font-medium mb-2">{title}</h5>
