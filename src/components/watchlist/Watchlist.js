@@ -5,9 +5,11 @@ import { WatchlistContext } from "../context/WatchlistState";
 const Watchlist = () => {
 
     const {watchlist} = useContext(WatchlistContext);
+    const bgStyle = watchlist.length <= 8 ? true : false;
     
+
     return(
-        <div className="bg-star-wars-4 bg-cover">
+        <div className={`bg-star-wars-4 bg-cover ${bgStyle ? "h-screen" : null}`}>
             <div className="flex flex-wrap justify-around sm:px-10 sm:m-0 sm:grid pt-[7.2rem] pb-10 w-full 3xl:grid-cols-8 2xl:grid-cols-7 xl:grid-cols-6 lg:grid-cols-5 md:grid-cols-4 sm:grid-cols-3">   
                     {watchlist.map((item, index) => {
                         let isShow = item.original_title === undefined ? true : false;
