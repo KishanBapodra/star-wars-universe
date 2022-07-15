@@ -5,6 +5,8 @@ const Movie = (props) => {
 
     const location = useLocation();
     const data = location.state?.data;
+
+    if(data) {
     return(
         <div className="py-24 bg-sky-900 h-screen w-full">
             <div className="h-full flex flex-col my-4 sm:flex-row sm:justify-around items-center mx-10 lg:mx-20">
@@ -21,7 +23,15 @@ const Movie = (props) => {
                 </div>
             </div>
         </div>
-    )
+    )} else {
+        return(
+            <div className="bg-slate-800 h-screen">
+                <p className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[1.75rem] text-white bg-red-700 p-3 border-2 shadow-xl shadow-purple-700 border-purple-600 rounded-xl">
+                SORRY, Cant access directly. Goto Movies/shows -&gt; click on card. Voila
+                </p>
+            </div>
+        )
+    } 
 }
 
 export default Movie;

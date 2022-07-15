@@ -19,7 +19,7 @@ const Card = ({data ,title, description, image}) => {
   const addBtnDisable = storedMovie || storedShow ? true : false;
   const removeBtn = location.pathname === "/watchlist" ? true : false; 
   
-  const addToUrl = title.replace(/\//g,'-').replace(/\s+/g,'-').replace(/:+/g,'').toLowerCase();
+  const addToUrl = title.replace(/\//g,'-').replace(/\s+/g,'+').toLowerCase();
 
   return(
         <div className="relative group flex flex-column w-[10rem] h-[24rem] shadow-md hover:shadow-[0_45px_85px_-18px_rgba(0,0,0,1)] text-ellipsis overflow-hidden">
