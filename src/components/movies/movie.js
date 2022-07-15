@@ -8,11 +8,11 @@ const Movie = (props) => {
     return(
         <div className="py-24 bg-sky-900 h-screen w-full">
             <div className="h-full flex flex-col my-4 sm:flex-row sm:justify-around items-center mx-10 lg:mx-20">
-                <div className="my-4 sm:my-0 h-48 min-h-[50%] sm:min-h-fit bg-cyan-300 relative overflow-y-scroll scrollbar-hide max-w-3xl rounded-3xl border-2 border-red-400 text-white/80 shadow-red-800 shadow-xl">
+                <div className="my-4 sm:my-0 h-fit min-h-[50%] sm:min-h-fit bg-cyan-300 relative overflow-y-scroll scrollbar-hide max-w-3xl rounded-3xl border-2 border-red-400 text-white/80 shadow-red-800 shadow-xl">
                     <h1 className="flex content-center justify-center font-extrabold text-sky-900 text-2xl p-4 ">
                         {data ? data.original_title : "Loading..."}
                     </h1>
-                    <p className="pt-2 px-4 font-semibold text-sky-900 text-justify">
+                    <p className="p-2 px-4 font-semibold text-sky-900 text-justify">
                         {data ? data.overview : "Loading..."}
                     </p>
                 </div>

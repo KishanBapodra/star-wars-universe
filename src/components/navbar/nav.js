@@ -79,9 +79,9 @@ const Nav = () => {
                       <li>
                           <Link to="/movies" className="text-lg py-2 pr-4 pl-3 text-white/80 hover:text-white hover:bg-gray-50 md:hover:bg-transparent md:border-0  md:p-0 dark:text-white/80 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Movies</Link>
                       </li>
-                      <li>
+                      {/* <li>
                           <button onClick={createUser} className="text-lg pr-4 pl-3 text-white/80 hover:text-white hover:bg-gray-50 md:hover:bg-transparent md:border-0  md:pl-0 dark:text-white/80 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Login</button>
-                      </li>
+                      </li> */}
                       <li>
                       {!searchClicked? <button className=" text-white/80 hover:bg-gray-50 md:hover:bg-transparent md:border-0  md:p-0 md:pl-1 dark:text-white/80 md:dark:hover:text-white dark:hover:bg-white/80 dark:hover:text-white md:dark:hover:bg-transparent" onClick={handleSearch}>
                                           <FontAwesomeIcon className="py-1 text-sm" icon={faSearch} />

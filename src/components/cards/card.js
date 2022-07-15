@@ -23,7 +23,7 @@ const Card = ({data ,title, description, image}) => {
 
   return(
         <div className="relative group flex flex-column w-[10rem] h-[24rem] shadow-md hover:shadow-[0_45px_85px_-18px_rgba(0,0,0,1)] text-ellipsis overflow-hidden">
-            <div className="rounded-lg shadow-lg max-w-xs text-ellipsis bg-white bg-opacity-50">
+            <div className="rounded-lg shadow-lg max-w-xs text-ellipsis bg-white bg-opacity-40">
               <Link 
                 to={!storedMovie && !storedShow ? addToUrl : (storedMovie ? "/movies/" + addToUrl : "/shows/" + addToUrl)} 
                 state={{data: data}}
